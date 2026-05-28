@@ -10,9 +10,10 @@ This is a project I decided to make because I was bored and wanted to give my KS
 
 ## Features:
 
-- Minimal Orbital editing for Forge II Satellite  
-- Minimal Terminal/ASCII based UI  
-- that's really it for now  
+- Orbital Map for 2 satellite generated based on math :D
+- The ability to change the numbers that make the orbit map that is based on math
+- umm
+- idk what else
 
 ## Requirements;
 
@@ -38,11 +39,18 @@ Or
 - Use the 'cd' command to change to the folder in which you downloaded the file too (Most commonly 'C:\Users\your_user\Downloads')  
 - Run 'python Darksight_Aerospace_Mission_Planner.py'  
 
+#### .exe File
+
+- Go to dist folder
+- download .exe file
+- find .exe file on computer
+- double click .exe file to run :D
+
 ## Roadmap (In order that I want to add them):
 
 - Active Mission Viewer map  (Done)  
-- Making Forgiven II Satellite do something when selected (Because right now only Forge II works)  
-- Adding more Satellites  
+- Making Forgiven II Satellite do something when selected (Because right now only Forge II works)  (Done)  
+- Adding more Satellites  (not done D:)
 
 ## Project Status (Because I want to be able to let people know with just the read me if it's over or not):
 
