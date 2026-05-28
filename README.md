@@ -19,7 +19,7 @@ How to Run:
 Python Source:
 
 Requirements;
-Python 3.14 or newer, that's it!
+Python 3.12 or newer, that's it!
 
 Download Darksight_Aerospace_Mission_Planner.py
 Open the file in VS Code (make sure you have the Python extension!)
