@@ -1,5 +1,6 @@
 #Rocket Mission Planner
 import os
+import math
 
 entry_1 = {
     "name" : "Forge II Satellite",
@@ -23,6 +24,16 @@ entry_3 = {
     "periapsis" : "?",
 }
 
+earth_radius = 6371
+def calculate_orbital_geometry(entry):
+    r_a = entry["apoapsis"] + earth_radius
+    r_p = entry["periapsis"] + earth_radius
+
+    a = (r_a + r_p) / 2
+    b = math.sqrt(r_a * r_p)
+    scale = 39 / a
+    return a, b, scale
+
 def mission_planner():
     os.system('cls')
     print("\nBooting Mission Planner")
@@ -37,6 +48,7 @@ def mission_planner():
         pass
 
 def main():
+    a1, b1, scale = calculate_orbital_geometry(entry_1)
     os.system('cls')
     print(f"\nWelcome, Engineer, to the Darksight Aerospace Mission Planner.")
     def boot_select():
@@ -44,7 +56,7 @@ def main():
         if option_boot_select == "1":
             mission_planner()
         elif option_boot_select == "2":
-            pass
+            mission_map()
         elif option_boot_select == "3":
             input(f"\nExiting Darksight Aerospace Mission Planner")
             quit()
@@ -88,5 +100,8 @@ def orbital_selection_one_operation():
     elif orbital_change_one == "3":
         print("\nRebooting...")
         main()
+
+def mission_map():
+    pass #for now
 
 main()
