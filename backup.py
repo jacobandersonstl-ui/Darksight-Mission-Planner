@@ -1,9 +1,12 @@
 #Rocket Mission Planner
+import os
 
 entry_1 = {
-    "name" : "Forge II Satellite (Darksight Aerospace)",
+    "name" : "Forge II Satellite",
+    "organization" : "Darksight Aerospace",
     "apoapsis" : 401578,
     "periapsis" : 393285,
+    "ΔV" : 435,
 }
 
 entry_2 = {
@@ -19,19 +22,20 @@ entry_3 = {
 }
 
 def mission_planner():
-    print(f"\n" * 50)
+    os.system('cls')
     print("\nBooting Mission Planner")
-    print(f"\n" * 50)
+    os.system('cls')
     print(f"-" * 38)
     print(" Darksight Aerospace Mission Planing Software")
     print(f"-" * 38)
-    orbital_entry = input(f"What orbit would you like to edit? 1: {entry_1['name']}; 2: {entry_2['name']}; 3: None; Choice: ")
+    orbital_entry = input(f"What orbit would you like to edit? 1: {entry_1['name']} ({entry_1['organization']}); 2: {entry_2['name']}; 3: None; Choice: ")
     if orbital_entry == "1":
         orbital_selection_one()
     else:
         pass
 
 def main():
+    os.system('cls')
     print(f"\nWelcome, Engineer, to the Darksight Aerospace Mission Planner.")
     def boot_select():
         option_boot_select = input(f"\nPlease select what you would like to do: 1: Mission Planner 2: Active Missions Viewer 3: Quit; Choice: ")
@@ -48,8 +52,39 @@ def main():
     boot_select()
 
 def orbital_selection_one():
-    print(f"\n" * 50)
+    os.system('cls')
     print(f"\nEditing orbit of {entry_1['name']}. Please wait...")
     input("\nPress Enter")
+    os.system('cls')
+    print("==================================================")
+    print("        DARKSIGHT AEROSPACE MISSION PLANNER")
+    print("==================================================\n")
+
+    print(f"Satellite:        {entry_1['name']}")
+    print(f"Organization:     {entry_1['organization']}\n")
+
+    print(f"Apoapsis:         {entry_1['apoapsis']:,}")
+    print(f"Periapsis:        {entry_1['periapsis']:,}")
+    print(f"Delta-V:          {entry_1['ΔV']:,}\n")
+
+    print("==================================================")
+    input("\nPress Enter")
+    orbital_selection_one_operation()
+
+def orbital_selection_one_operation():
+    orbital_change_one = input("\nPlease make a selection based on what you want to do: 1: Edit Apoapsis; 2: Edit Periapsis; 3: Quit")
+    if orbital_change_one == "1":
+        os.system('cls')
+        apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}; New Apoapsis: ")
+        entry_1["apoapsis"] = int(apoapsis_change)
+        orbital_selection_one()
+    elif orbital_change_one == "2":
+        os.system('cls')
+        periapsis_change = input(f"\nCurrent Periapsis: {entry_1['periapsis']:,}; New Periapsis: ")
+        entry_1["periapsis"] = int(periapsis_change)
+        orbital_selection_one()
+    elif orbital_change_one == "3":
+        print("\nRebooting...")
+        main()
 
 main()
