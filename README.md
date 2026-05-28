@@ -14,12 +14,14 @@ This is a project I decided to make because I was bored and wanted to give my KS
 - Minimal Terminal/ASCII based UI  
 - that's really it for now  
 
-## How to Run:
+## Requirements;
 
-### Python Source:
+- Python 3.12 or newer
+- Visual Studio Code
 
-#### Requirements;
-Python 3.12 or newer, that's it!
+## How To Run:
+
+#### Visual Studio Code
 
 - Download Darksight_Aerospace_Mission_Planner.py  
 - Open the file in VS Code (make sure you have the Python extension!)  
