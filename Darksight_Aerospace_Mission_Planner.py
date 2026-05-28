@@ -45,7 +45,7 @@ def mission_planner():
     if orbital_entry == "1":
         orbital_selection_one()
     else:
-        pass
+        orbital_selection_two()
 
 def main():
     os.system('cls')
@@ -113,6 +113,54 @@ def orbital_selection_one_operation():
         input(f"Invalid Input '{orbital_change_one}'")
         orbital_selection_one()
 
+def orbital_selection_two():
+    os.system('cls')
+    print(f"\nEditing orbit of {entry_2['name']}. Please wait...")
+    input("\nPress Enter")
+    os.system('cls')
+    print("==================================================")
+    print("        DARKSIGHT AEROSPACE MISSION PLANNER")
+    print("==================================================\n")
+
+    print(f"Satellite:        {entry_2['name']}")
+    print(f"Organization:     {entry_2['organization']}\n")
+
+    print(f"Apoapsis:         {entry_2['apoapsis']:,}km")
+    print(f"Periapsis:        {entry_2['periapsis']:,}km")
+    print(f"Delta-V:          {entry_2['ΔV']:,}m/s\n")
+
+    print("==================================================")
+    orbital_selection_two_operation()
+
+def orbital_selection_two_operation():
+    orbital_change_two = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Reboot (Back)\nChoice: ")
+    if orbital_change_two == "1":
+        os.system('cls')
+        apoapsis_change = input(f"\nCurrent Apoapsis: {entry_2['apoapsis']:,}km; New Apoapsis: ")
+        try:
+            entry_2["apoapsis"] = int(apoapsis_change)
+        except ValueError:
+            input(f"Invalid Apoapsis Value. Press Enter")
+            orbital_selection_two()
+            return
+        orbital_selection_two()
+    elif orbital_change_two == "2":
+        os.system('cls')
+        periapsis_change = input(f"\nCurrent Periapsis: {entry_2['periapsis']:,}km; New Periapsis: ")
+        try:
+            entry_2["periapsis"] = int(periapsis_change)
+        except ValueError:
+            input(f"Invalid Periapsis Value. Press Enter")
+            orbital_selection_two()
+            return
+        orbital_selection_two()
+    elif orbital_change_two == "3":
+        print("\nRebooting...")
+        main()
+    else:
+        input(f"Invalid Input '{orbital_change_two}'")
+        orbital_selection_two()
+
 
 def mission_map_select():
     os.system('cls')
@@ -127,7 +175,7 @@ def mission_map_select():
     if map_select == "1":
         entry_1_map()
     elif map_select == "2":
-        pass
+        entry_2_map()
     elif map_select == "3":
         main()
     else:
@@ -135,6 +183,7 @@ def mission_map_select():
         mission_map_select()
 
 def entry_1_map():
+    os.system('cls')
     print(f"""
     ==================================================
            DARKSIGHT AEROSPACE MISSION PLANNER
@@ -159,6 +208,32 @@ def entry_1_map():
         input(f"\nInvalid Input '{entry_1_orbit_menu}'. Press Enter")
         entry_1_map()
 
+def entry_2_map():
+    os.system('cls')
+    print(f"""
+    ==================================================
+           DARKSIGHT AEROSPACE MISSION PLANNER
+    ==================================================
+
+                    Orbit View""")
+    draw_map(entry_2)
+    print(f"""\n
+    0 = Earth
+    * = {entry_2['name']}
+    """)
+    entry_2_orbit_menu = input(f"""Menu:
+          1: Change Orbit
+          2: Quit
+                               
+          Choice: """)
+    if entry_2_orbit_menu == "1":
+        orbital_selection_two()
+    elif entry_2_orbit_menu == "2":
+        main()
+    else:
+        input(f"\nInvalid Input '{entry_2_orbit_menu}'. Press Enter")
+        entry_2_map()
+
 def draw_map(entry):
     a, b, scale = calculate_orbital_geometry(entry)
     width, height = 79, 39
@@ -182,4 +257,4 @@ def draw_map(entry):
     for row in grid:
         print(''.join(row))
 
-mission_map_select()
+main()
