@@ -141,16 +141,9 @@ def entry_1_map():
            DARKSIGHT AEROSPACE MISSION PLANNER
     ==================================================
 
-                    Orbit View
-
-                 .-------------.
-              .-'               '-.
-            .'                     '.
-           /           0             \\
-           \\                         /
-            '.                     .'
-              '-.______*________.-'
-
+                    Orbit View""")
+    draw_map(entry_1)
+    print(f"""\n
     0 = Earth
     * = {entry_1['name']}
     """)
@@ -167,4 +160,26 @@ def entry_1_map():
         input(f"\nInvalid Input '{entry_1_orbit_menu}'. Press Enter")
         entry_1_map()
 
-main()
+def draw_map(entry):
+    width, height = 79, 39
+    a, b, scale = calculate_orbital_geometry(entry)
+    a_s = a * scale
+    b_s = b * scale * 0.5  # 0.5 because terminal chars are taller than wide
+    
+    grid = [['.' for _ in range(width)] for _ in range(height)]
+    
+    cx, cy = width // 2, height // 2
+    grid[cy][cx] = '0'  # Earth
+    
+    for y in range(height):
+        for x in range(width):
+            dx = x - cx
+            dy = y - cy
+            val = (dx/a_s)**2 + (dy/b_s)**2
+            if abs(val - 1) < 0.15:
+                grid[y][x] = '*'
+    
+    for row in grid:
+        print(''.join(row))
+
+mission_map_select()
