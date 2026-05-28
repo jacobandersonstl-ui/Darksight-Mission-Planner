@@ -139,7 +139,9 @@ def entry_1_map():
     """)
     entry_1_orbit_menu = input(f"""Menu:
           1: Change Orbit
-          2: Quit""")
+          2: Quit
+                               
+          Choice: """)
     if entry_1_orbit_menu == "1":
         orbital_selection_one()
     elif entry_1_orbit_menu == "2":
