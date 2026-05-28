@@ -62,6 +62,7 @@ def main():
             quit()
         else:
             input(f"\nInvalid Input: '{option_boot_select}'")
+            main()
     
     boot_select()
 
@@ -82,7 +83,6 @@ def orbital_selection_one():
     print(f"Delta-V:          {entry_1['ΔV']:,}m/s\n")
 
     print("==================================================")
-    input("\nPress Enter")
     orbital_selection_one_operation()
 
 def orbital_selection_one_operation():
@@ -90,16 +90,30 @@ def orbital_selection_one_operation():
     if orbital_change_one == "1":
         os.system('cls')
         apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}km; New Apoapsis: ")
-        entry_1["apoapsis"] = int(apoapsis_change)
+        try:
+            entry_1["apoapsis"] = int(apoapsis_change)
+        except ValueError:
+            input(f"Invalid Apoapsis Value. Press Enter")
+            orbital_selection_one()
+            return
         orbital_selection_one()
     elif orbital_change_one == "2":
         os.system('cls')
         periapsis_change = input(f"\nCurrent Periapsis: {entry_1['periapsis']:,}km; New Periapsis: ")
-        entry_1["periapsis"] = int(periapsis_change)
+        try:
+            entry_1["periapsis"] = int(periapsis_change)
+        except ValueError:
+            input(f"Invalid Periapsis Value. Press Enter")
+            orbital_selection_one()
+            return
         orbital_selection_one()
     elif orbital_change_one == "3":
         print("\nRebooting...")
         main()
+    else:
+        input(f"Invalid Input '{orbital_change_one}'")
+        orbital_selection_one()
+
 
 def mission_map_select():
     os.system('cls')
@@ -117,6 +131,9 @@ def mission_map_select():
         pass
     elif map_select == "3":
         main()
+    else:
+        input(f"Invalid Input '{map_select}'. Press Enter")
+        mission_map_select()
 
 def entry_1_map():
     print(f"""
@@ -146,5 +163,8 @@ def entry_1_map():
         orbital_selection_one()
     elif entry_1_orbit_menu == "2":
         main()
+    else:
+        input(f"\nInvalid Input '{entry_1_orbit_menu}'. Press Enter")
+        entry_1_map()
 
 main()
