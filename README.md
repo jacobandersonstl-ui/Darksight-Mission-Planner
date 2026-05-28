@@ -36,11 +36,11 @@ Or
 - Download Darksight_Aerospace_Mission_Planner.py  
 - Open Powershell  
 - Use the 'cd' command to change to the folder in which you downloaded the file too (Most commonly 'C:\Users\your_user\Downloads')  
-- Run 'Python Darksight_Aerospace_Mission_Planner.py  
+- Run 'python Darksight_Aerospace_Mission_Planner.py'  
 
 ## Roadmap (In order that I want to add them):
 
-- Active Mission Viewer map  
+- Active Mission Viewer map  (Done)  
 - Making Forgiven II Satellite do something when selected (Because right now only Forge II works)  
 - Adding more Satellites  
 

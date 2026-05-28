@@ -56,7 +56,7 @@ def main():
         if option_boot_select == "1":
             mission_planner()
         elif option_boot_select == "2":
-            mission_map()
+            mission_map_select()
         elif option_boot_select == "3":
             input(f"\nExiting Darksight Aerospace Mission Planner")
             quit()
@@ -101,7 +101,48 @@ def orbital_selection_one_operation():
         print("\nRebooting...")
         main()
 
-def mission_map():
-    pass #for now
+def mission_map_select():
+    os.system('cls')
+    print(f"\nSatellite Orbital Map Viewer")
+    print(f"\n"* 5)
+    map_select = input(f"""Please select the orbit you would like a map of:
+          1: {entry_1['name']}
+          2: {entry_2['name']}
+          3: Reboot (back)
+          
+          Choice: """)
+    if map_select == "1":
+        entry_1_map()
+    elif map_select == "2":
+        pass
+    elif map_select == "3":
+        main()
+
+def entry_1_map():
+    print(f"""
+    ==================================================
+           DARKSIGHT AEROSPACE MISSION PLANNER
+    ==================================================
+
+                    Orbit View
+
+                 .-------------.
+              .-'               '-.
+            .'                     '.
+           /           0             \\
+           \\                         /
+            '.                     .'
+              '-.______*________.-'
+
+    0 = Earth
+    * = {entry_1['name']}
+    """)
+    entry_1_orbit_menu = input(f"""Menu:
+          1: Change Orbit
+          2: Quit""")
+    if entry_1_orbit_menu == "1":
+        orbital_selection_one()
+    elif entry_1_orbit_menu == "2":
+        main()
 
 main()
