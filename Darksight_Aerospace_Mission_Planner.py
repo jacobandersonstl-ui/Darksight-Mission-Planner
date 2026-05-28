@@ -48,7 +48,6 @@ def mission_planner():
         pass
 
 def main():
-    a1, b1, scale = calculate_orbital_geometry(entry_1)
     os.system('cls')
     print(f"\nWelcome, Engineer, to the Darksight Aerospace Mission Planner.")
     def boot_select():
@@ -86,7 +85,7 @@ def orbital_selection_one():
     orbital_selection_one_operation()
 
 def orbital_selection_one_operation():
-    orbital_change_one = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Quit\nChoice: ")
+    orbital_change_one = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Reboot (Back)\nChoice: ")
     if orbital_change_one == "1":
         os.system('cls')
         apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}km; New Apoapsis: ")
@@ -161,6 +160,7 @@ def entry_1_map():
         entry_1_map()
 
 def draw_map(entry):
+    a, b, scale = calculate_orbital_geometry(entry)
     width, height = 79, 39
     a, b, scale = calculate_orbital_geometry(entry)
     a_s = a * scale
