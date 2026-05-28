@@ -1,0 +1,14 @@
+# PyInstaller temp build files
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments (optional but recommended)
+venv/
+.env/
+
+# OS junk
+.DS_Store
+Thumbs.db
