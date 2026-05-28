@@ -11,8 +11,10 @@ entry_1 = {
 
 entry_2 = {
     "name" : "Forgiven II Satellite (Darksight Aerospace)",
+    "organization" : "Darksight Aerospace",
     "apoapsis" : 401578,
     "periapsis" : 393285,
+    "ΔV" : 435,
 }
 
 entry_3 = {

@@ -11,8 +11,10 @@ entry_1 = {
 
 entry_2 = {
     "name" : "Forgiven II Satellite (Darksight Aerospace)",
+    "organization" : "Darksight Aerospace",
     "apoapsis" : 401578,
     "periapsis" : 393285,
+    "ΔV" : 435,
 }
 
 entry_3 = {
@@ -63,24 +65,24 @@ def orbital_selection_one():
     print(f"Satellite:        {entry_1['name']}")
     print(f"Organization:     {entry_1['organization']}\n")
 
-    print(f"Apoapsis:         {entry_1['apoapsis']:,}")
-    print(f"Periapsis:        {entry_1['periapsis']:,}")
-    print(f"Delta-V:          {entry_1['ΔV']:,}\n")
+    print(f"Apoapsis:         {entry_1['apoapsis']:,}km")
+    print(f"Periapsis:        {entry_1['periapsis']:,}km")
+    print(f"Delta-V:          {entry_1['ΔV']:,}m/s\n")
 
     print("==================================================")
     input("\nPress Enter")
     orbital_selection_one_operation()
 
 def orbital_selection_one_operation():
-    orbital_change_one = input("\nPlease make a selection based on what you want to do: 1: Edit Apoapsis; 2: Edit Periapsis; 3: Quit")
+    orbital_change_one = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Quit\nChoice: ")
     if orbital_change_one == "1":
         os.system('cls')
-        apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}; New Apoapsis: ")
+        apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}km; New Apoapsis: ")
         entry_1["apoapsis"] = int(apoapsis_change)
         orbital_selection_one()
     elif orbital_change_one == "2":
         os.system('cls')
-        periapsis_change = input(f"\nCurrent Periapsis: {entry_1['periapsis']:,}; New Periapsis: ")
+        periapsis_change = input(f"\nCurrent Periapsis: {entry_1['periapsis']:,}km; New Periapsis: ")
         entry_1["periapsis"] = int(periapsis_change)
         orbital_selection_one()
     elif orbital_change_one == "3":
