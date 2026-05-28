@@ -17,6 +17,8 @@ This is a project I decided to make because I was bored and wanted to give my KS
 ## Requirements;
 
 - Python 3.12 or newer
+
+#### Optional:
 - Visual Studio Code
 
 ## How To Run:
