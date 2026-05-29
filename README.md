@@ -52,6 +52,6 @@ Or
 - Making Forgiven II Satellite do something when selected (Because right now only Forge II works)  (Done)  
 - Adding more Satellites  (not done D:)
 
-## Project Status (Because I want to be able to let people know with just the read me if it's over or not):
+## Project Status (Because I want to be able to let people know with just the readme if it's over or not):
 
 Active; Alpha Stages of Development
