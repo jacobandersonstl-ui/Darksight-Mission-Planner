@@ -85,7 +85,7 @@ def orbital_selection_one():
     orbital_selection_one_operation()
 
 def orbital_selection_one_operation():
-    orbital_change_one = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Reboot (Back)\nChoice: ")
+    orbital_change_one = input("\nPlease make a selection based on what you want to do:\n1: Edit Apoapsis\n2: Edit Periapsis\n3: Go to Map View\n4: Reboot (Back)\nChoice: ")
     if orbital_change_one == "1":
         os.system('cls')
         apoapsis_change = input(f"\nCurrent Apoapsis: {entry_1['apoapsis']:,}km; New Apoapsis: ")
@@ -107,6 +107,8 @@ def orbital_selection_one_operation():
             return
         orbital_selection_one()
     elif orbital_change_one == "3":
+        entry_1_map()
+    elif orbital_change_one == "4":
         print("\nRebooting...")
         main()
     else:
@@ -155,6 +157,8 @@ def orbital_selection_two_operation():
             return
         orbital_selection_two()
     elif orbital_change_two == "3":
+        entry_1_map()
+    elif orbital_change_two == "4":
         print("\nRebooting...")
         main()
     else:
