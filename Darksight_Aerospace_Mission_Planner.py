@@ -157,7 +157,7 @@ def orbital_selection_two_operation():
             return
         orbital_selection_two()
     elif orbital_change_two == "3":
-        entry_1_map()
+        entry_2_map()
     elif orbital_change_two == "4":
         print("\nRebooting...")
         main()
