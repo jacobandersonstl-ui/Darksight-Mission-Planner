@@ -13,17 +13,18 @@ This is a project I decided to make because I was bored and wanted to give my KS
 
 ## Features:
 
-- Orbital Map for 2 satellite generated based on math :D
+- Orbital Map for 5 satellite generated based on math :D
 - The ability to change the numbers that make the orbit map that is based on math
-- umm
-- idk what else
+- 2 Map Modes (Still based on math)  
+- umm  
+- idk what else  
 
-## Requirements;
+## Requirements:
 
 - Python 3.12 or newer
 
 #### Optional:
-- Visual Studio Code
+- Visual Studio Code (Optional Depending on the way you Run the Program)
 
 ## How To Run:
 
@@ -42,9 +43,11 @@ Or
 - Use the 'cd' command to change to the folder in which you downloaded the file too (Most commonly 'C:\Users\your_user\Downloads')  
 - Run 'python Darksight_Aerospace_Mission_Planner.py'  
 
+Or
+
 #### .exe File
 
-- Go to dist folder
+- Go to dist folder (on repo)
 - download .exe file
 - find .exe file on computer
 - double click .exe file to run :D
@@ -53,7 +56,7 @@ Or
 
 - Active Mission Viewer map  (Done)  
 - Making Forgiven II Satellite do something when selected (Because right now only Forge II works)  (Done)  
-- Adding more Satellites  (not done D:)
+- Adding more Satellites  (This won't be done until the project is abandoned)
 
 ## Project Status (Because I want to be able to let people know with just the readme if it's over or not):
 
